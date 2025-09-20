@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relojoaria do Rinkas</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <style>
+        #carousel-exemplo {
+  max-width: 1600px; /* largura máxima do carrossel */
+  margin: auto; /* centraliza na tela */
+}
+
+#carousel-exemplo img {
+  max-height: 400px; /* altura máxima das imagens */
+  object-fit: cover; /* corta as bordas sem distorcer */
+}
+
+.navbar-nav .nav-link.active{
+            color: white;
+        }
+
+        .nav-link{
+            text-align: center;
+        }
+        section{
+            min-height: 100vh;
+            border: 1px solid black;
+            padding-top: 120px;
+        }
+
+        header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer{
+            color: white;
+            background-color: black;
+            padding: 16px;
+        }
+
+        .contato{
+            background-color: #f8f9fa;
+        }
+
+        .contato h2{
+            margin-bottom: 20px;
+        }
+        .contato form{
+            max-width: 600px;
+            margin: auto;
+        }
+        .contato label{
+            font-weight: bold;
+        }
+        .contato button{
+            margin-top: 10px;
+        }
+        h1, h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contato .form-check{
+            margin-top: 10px;
+        }
+
+
+        .card{
+            margin-bottom: 20px;
+        }
+
+        .carousel-caption{
+            background-color: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px){
+            .carousel-caption h2{
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px){
+            .carousel-caption h2{
+                font-size: 1rem;
+            }
+        }
+
+        .toast-container{
+            z-index: 1100;
+        }
+
+        body{
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="cabecalho">
+        <div class="navbar navbar-expand-lg">
+            <div class="container">
+                <h2>Relojoaria do Rinkas</h2>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <nav class="collapse navbar-collapse justify-content-end" id="menu">
+                    <ul class="nav navbar-nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#inicio">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#produtos">Promoções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button type="button" id="btn-checar-emails" class="btn btn-success">Carrinho</button>
+            </div>
+        </div>
+    </header>
+    <div id="carousel-exemplo" class="carousel carousel-fade slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div data-bs-interval="3000" class="carousel-item active">
+                <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2015/06/25/17/22/smart-watch-821559_1280.jpg" alt="">
+                <div class="carousel-caption">
+                    <h2>AppleWatch</h2>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2023/04/26/17/59/wrist-watch-7953062_1280.jpg" alt="">
+                <div class="carousel-caption">
+                    <h2>Relógio Fossil</h2>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2023/11/16/10/26/casio-8392121_1280.jpg" alt="">
+                <div class="carousel-caption">
+                    <h2>Relógio Casio</h2>
+                </div>
+            </div>
+        </div>
+        <button data-bs-target="#carousel-exemplo" data-bs-slide="prev" class="carousel-control-prev" type="button" >
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button data-bs-target="#carousel-exemplo" data-bs-slide="next" class="carousel-control-next" type="button">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel-exemplo" class="active" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="2"></button>
+        </div>
+    </div>
+
+    <div data-bs-spy="scroll" data-bs-target="#cabecalho">
+        <section id="inicio">
+            <div class="container">
+        <div class="row">
+            <h1>Produtos em Destaque</h1>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="https://technos.vtexassets.com/arquivos/ids/168757-1000-1000/OS20IK4X.jpg?v=635857067429200000" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Relógio Technos Legacy Masculino Cronógrafo</h4>
+                        <h5 class="card-subtitle">R$ 920,55</h5>
+                        <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="https://technos.vtexassets.com/arquivos/ids/220441-1000-1000/OS20IQU2P_1.jpg?v=638484609689130000" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Relógio Technos Masculino Legacy Dourado</h4>
+                        <h5 class="card-subtitle">R$ 888,25</h5>
+                        <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="https://technos.vtexassets.com/arquivos/ids/222344-1000-1000/JS25BBZ1A_1.jpg?v=638646131165570000" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Relógio Technos Masculino Legacy Prata</h4>
+                        <h5 class="card-subtitle">R$ 888,25</h5>
+                        <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+        <section id="produtos">
+            <h2>Promoções</h2>
+            <div class="container">
+                <nav class="nav nav-tabs">
+                    <button data-bs-toggle="tab" data-bs-target="#aba1" class="nav-link active" type="button">Novidades</button>
+                    <button data-bs-toggle="tab" data-bs-target="#aba2" class="nav-link" type="button">SmartWatch</button>
+                    </nav>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="aba1">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="https://technos.vtexassets.com/arquivos/ids/225781-1000-1000/2115UBR0P_1.jpg?v=638884363615100000" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Relógio Technos Masculino Steel Preto</h4>
+                                    <h5 class="card-subtitle">R$ 379.05</h5>
+                                    <h6 style="text-decoration: line-through;">R$ 450.05</h6>
+                                    <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="https://technos.vtexassets.com/arquivos/ids/225787-1000-1000/2115UBT1F_1.jpg?v=638884656032430000" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Relógio Technos Masculino Steel Preto</h4>
+                                    <h5 class="card-subtitle">R$ 450.05</h5>
+                                    <h6 style="text-decoration: line-through;">R$ 550.90</h6>
+                                    <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="https://technos.vtexassets.com/arquivos/ids/225773-1000-1000/2115UBM1K_1.jpg?v=638883795790830000" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Relógio Technos Masculino Steel Preto</h4>
+                                    <h5 class="card-subtitle">R$ 390.45</h5>
+                                    <h6 style="text-decoration: line-through;">R$ 420.50</h6>
+                                    <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="aba2">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="https://technos.vtexassets.com/arquivos/ids/217850-1000-1000/TMAXAJ7T_1.jpg?v=638318596061300000" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Smartwatch Technos Connect MAX Rose e Verde</h4>
+                                    <h5 class="card-subtitle">R$ 854,05</h5>
+                                    <h6 style="text-decoration: line-through;">R$ 1100.35</h6>
+                                    <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="https://technos.vtexassets.com/arquivos/ids/223548-1000-1000/TMAXAS8P_1.jpg.jpg?v=638741844577230000" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Smartwatch Technos Connect MAX Preto</h4>
+                                    <h5 class="card-subtitle">R$ 949.05</h5>
+                                    <h6 style="text-decoration: line-through;">R$ 1250.79</h6>
+                                    <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="https://technos.vtexassets.com/arquivos/ids/221101-1000-1000/TMAXAL8D_1.jpg?v=638536458530030000" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Relógio Technos Masculino Steel Preto</h4>
+                                    <h5 class="card-subtitle">R$ 1000.15</h5>
+                                    <h6 style="text-decoration: line-through;">R$ 1300.42</h6>
+                                    <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contato">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>Entre em contato</h2>
+                        <form>
+                            <label class="form-label" for="nome">Seu nome:</label>
+                            <input class="form-control" type="text" id="nome">
+                            <label for="email" class="form-label">Seu email</label>
+                            <input type="email" id="email" class="form-control">
+                            <label for="mensagem" class="form-label">Sua mensagem:</label>
+                            <textarea id="mensagem" class="form-control"></textarea>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="aceito-termos">
+                                <label class="form-check-label" for="aceito-termos">Li e concordo com os termos do site</label>
+                            </div>
+                            <button class="btn btn-success">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-4">
+        <div data-bs-autohide="false" class="toast" id="mensagens-alerta">
+            <header class="toast-header">
+                <strong>Carrinho</strong>
+            </header>
+            <div class="toast-body">
+                Seu carrinho está vazio!
+                <div class="mt-2 pt-2 border-top">
+                    <button data-bs-dismiss="toast" class="btn btn-danger">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-end">
+                    &copy; 2024 E-Commerce do Rinkas
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="./lib/bootstrap.bundle.min.js"></script>
+<script>
+    const ativadorToast= document.getElementById('btn-checar-emails');
+    const mensagem= document.getElementById('mensagens-alerta');
+
+    if(ativadorToast){
+        ativadorToast.addEventListener('click', function(){
+                const toast= new bootstrap.Toast(mensagem);
+                toast.show();
+            })
+        };
+
+</script>
+</html>
