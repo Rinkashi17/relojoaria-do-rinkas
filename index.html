@@ -6,15 +6,9 @@
     <title>Relojoaria do Rinkas</title>
     <link rel="stylesheet" href="./lib/bootstrap.min.css">
     <style>
-        #carousel-exemplo {
-  max-width: 1600px; /* largura máxima do carrossel */
-  margin: auto; /* centraliza na tela */
-}
+        
 
-#carousel-exemplo img {
-  max-height: 400px; /* altura máxima das imagens */
-  object-fit: cover; /* corta as bordas sem distorcer */
-}
+
 
 .navbar-nav .nav-link.active{
             color: white;
@@ -99,6 +93,40 @@
         body{
             scroll-behavior: smooth;
         }
+
+        #carousel-exemplo {
+            width: 100%;      /* sempre ocupa toda a largura */
+            margin: auto;
+            }
+
+            #carousel-exemplo img {
+            width: 100%;
+            height: auto;      /* mantém proporção da imagem */
+            object-fit: cover; /* corta as bordas se necessário */
+            max-height: 80vh;  /* nunca passa de 80% da altura da tela */
+            }
+
+            /* Ajustes para celular */
+            @media (max-width: 576px) {
+            #carousel-exemplo img {
+                max-height: 250px;
+            }
+            }
+
+            /* Ajustes para tablet */
+            @media (min-width: 577px) and (max-width: 991px) {
+            #carousel-exemplo img {
+                max-height: 400px;
+            }
+            }
+
+            /* Ajustes para desktop */
+            @media (min-width: 992px) {
+            #carousel-exemplo img {
+                max-height: 600px;
+            }
+        }
+
 
     </style>
 </head>
